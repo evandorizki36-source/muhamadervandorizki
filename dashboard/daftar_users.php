@@ -15,6 +15,7 @@
  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <h1  class = "mt-4"> Daftar User</h1>
           <hr />
+          <a href = "index.php?halaman=tambah_users_form.php" class = "btn btn-primary mb - 3"> Tambah User </a>
           <div class="table-responsive small">
             <table class="table table-striped table-sm">
               <thead>
@@ -36,11 +37,14 @@
                 <td><?php echo $user['email']; ?></td>
                 <td><?php echo $user['Asal']; ?></td>
                 <td>
-                  delete | edit
+                  <a href="delete_users.php?id=<?php echo $user['ID']; ?>"
+   class="btn btn-danger btn-sm"
+   onclick="return confirm('Yakin ingin menghapus data ini?')">
+   Delete</a> | edit 
               </td>
               </tr>
               <?php
-
+  
               }
               ?>
               </tbody>

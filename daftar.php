@@ -15,14 +15,14 @@ if (isset($_POST["setuju"])) {
 
     if ($password == $password_ulang) {
 
-        // koneksi database
+    
         $database = new Database();
         $conn = $database->connect();
 
-        // kirim conn ke class Users
+       
         $user = new Users($conn);
 
-        // simpan data
+    
         $user->create(
             $username,
             $email,
