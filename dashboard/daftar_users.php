@@ -37,10 +37,10 @@
                 <td><?php echo $user['email']; ?></td>
                 <td><?php echo $user['Asal']; ?></td>
                 <td>
-                  <a href="delete_users.php?id=<?php echo $user['ID']; ?>"
+                <a href="delete_users.php?id=<?php echo $user['ID']; ?>"
    class="btn btn-danger btn-sm"
    onclick="return confirm('Yakin ingin menghapus data ini?')">
-   Delete</a> | edit 
+   Delete</a> | <a href=index.php?halaman=edit_user_form.php&id=<?php echo $user['ID'];?>>edit</a>
               </td>
               </tr>
               <?php

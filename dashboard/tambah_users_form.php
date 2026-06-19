@@ -13,10 +13,10 @@ $daftar_users = $result->fetch_all(MYSQLI_ASSOC);
           <h1 class="mt-4">Tambah User</h1>
           <hr />
           <div class="table-responsive small">
-            <form action="proses_tambah_users.php" method="POST">
+            <form action="proses_tambah_user.php" method="POST">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
+                    <input type="text" class="form-control" id="Username" name="username" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -24,7 +24,7 @@ $daftar_users = $result->fetch_all(MYSQLI_ASSOC);
                 </div>
                 <div class="mb-3">
                     <label for="asal" class="form-label">Asal</label>
-                    <input type="text" class="form-control" id="asal" name="asal" required>
+                    <input type="text" class="form-control" id="Asal" name="asal" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>

@@ -18,8 +18,6 @@ if (isset($_POST["setuju"])) {
     
         $database = new Database();
         $conn = $database->connect();
-
-       
         $user = new Users($conn);
 
     
