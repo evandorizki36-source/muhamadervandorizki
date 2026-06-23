@@ -1,21 +1,32 @@
  <?php
- include '../users.php';
- include '../database.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
- $db = new Database();
- $conn = $db->connect();
- $users = new Users($conn);
+include '../users.php';
+include '../database.php';
 
- $result = $users -> getAllUsers();
- $daftar_user = [];
- if ($result) {
-     $daftar_user = $result->fetch_all(MYSQLI_ASSOC);
- }
- ?>
+$db = new Database();
+$conn = $db->connect();
+$users = new Users($conn);
+
+$result = $users->getAllUsers();
+$daftar_user = [];
+
+if ($result) {
+    $daftar_user = $result->fetch_all(MYSQLI_ASSOC);
+}
+?>
  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <h1  class = "mt-4"> Daftar User</h1>
-          <hr />
-          <a href = "index.php?halaman=tambah_users_form.php" class = "btn btn-primary mb - 3"> Tambah User </a>
+          <h1 class="mt-4">Daftar User</h1><hr  />
+<div class="alert alert-success">
+    Selamat Datang
+    <?php echo $_SESSION['username']; ?>,
+    Anda telah login sebanyak
+    <?php echo $_SESSION['login_count']; ?>
+    kali.
+</div>
+<a href="index.php?halaman=tambah_users_form.php" class="btn btn-primary mb-3">Tambah User</a>
           <div class="table-responsive small">
             <table class="table table-striped table-sm">
               <thead>

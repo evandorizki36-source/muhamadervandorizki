@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once __DIR__ . "/database.php";
-require_once __DIR__ . "/users.php";
+require_once "database.php";
+require_once "users.php";
 
 $username = $_POST['input_username'] ?? '';
 $password = $_POST['input_password'] ?? '';
@@ -21,9 +21,14 @@ if ($ditemukan == false) {
 } else {
     $_SESSION['is_logged_in'] = true;
     $_SESSION['username'] = $username;
+
+    if (!isset($_SESSION['login_count'])) {
+        $_SESSION['login_count'] = 1;
+    } else {
+        $_SESSION['login_count']++;
+    }
+
     header("Location: dashboard/index.php");
     exit();
-     echo "<h4>Username atau password salah!</h4>";
-
 }
 ?>
